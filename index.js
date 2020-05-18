@@ -17,7 +17,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-console.log(processFirstItem(['foo', 'bar'],(str) => str + str));
+// console.log(processFirstItem(['foo', 'bar'],(str) => str + str));
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -68,11 +68,12 @@ Write a function called `inning` that generates a random number of points that a
 
 function inning(){
   let score = Math.round(Math.random() * 2);
-  console.log(score);
+  return score;
     /*Code Here*/
 
 }
-inning();
+// console.log(inning());
+
 
 /* Task 3: finalScore()
 
@@ -88,12 +89,23 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, inningNum){
+ let hScore = 0;
+ let aScore = 0;
+ for(let i = 0; i <= inningNum; i++){
+   hScore = hScore + inning();
+ };
+ for ( let i = 0; i <= inningNum; i++){
+   aScore = aScore + inning();
+ };
+ return `"Home": ${hScore}
+"Away": ${aScore}`;
 
-  /*Code Here*/
 
+  
+  
 }
-
+// console.log(finalScore(inning, 9));
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
