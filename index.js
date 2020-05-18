@@ -17,7 +17,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-
+// console.log(processFirstItem(['foo', 'bar'],(str) => str + str));
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -28,10 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 includes the count varible within its function scope, in counter2 the count varible is declared outside of counter2's function scope.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter 1 uses a closure with the function counterMaker closing the count variable within the scope of conterMaker
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * counter1 would be prefereable if multiple counters were needed for the program and the count variable would need to be stored within that counters scope.  
+ * counter2 would be preferable if only one counter was needed and the count varible would only need to be accesed by the counter function.  
 */
 
 // counter1 code
@@ -40,9 +46,12 @@ function counterMaker() {
   return function counter() {
    return count++;
   }
+  
 }
 
 const counter1 = counterMaker();
+// console.log(counter1());
+
 
 // counter2 code
 let count = 0;
@@ -51,16 +60,20 @@ function counter2() {
   return count++;
 }
 
+// console.log(counter2());
 
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
+function inning(){
+  let score = Math.round(Math.random() * 2);
+  return score;
     /*Code Here*/
 
 }
+// console.log(inning());
+
 
 /* Task 3: finalScore()
 
@@ -76,12 +89,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, inningNum){
+ let hScore = 0;
+ let aScore = 0;
+ for(let i = 0; i <= inningNum; i++){
+   hScore = hScore + inning();
+   aScore = aScore + inning();
+ };
+ return `"Home": ${hScore}
+"Away": ${aScore}`;
 
-  /*Code Here*/
 
+  
+  
 }
-
+// console.log(finalScore(inning, 9));
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
@@ -103,8 +125,16 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, inningNum) {
+  let hScore = 0;
+  let aScore = 0;
+  for(let i = 1; i <= inningNum; i++){
+    hScore = hScore + inning();
+    aScore = aScore + inning();
+    console.log(`${i} inning: ${hScore} - ${aScore}`);
+  };
+  return `"Home": ${hScore}
+"Away": ${aScore}`;
 }
 
-
+console.log(scoreboard(inning, 9));

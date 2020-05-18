@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closures give us the ability to put functions together by accessing functions from a parent level scope in a child level scope even after he parent function has been terminated.  Code that has been identified else where we can use later.  
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+A closue is used on the second line.  The function body of return function() has access to the outside scope and can access the 'name' variable
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+'name' value is always the same, 'newRoll' value changes with each roll
+
 c. What is the lexical scope of `newRoll`? 
+
+local scope of return function()
 
 ### Task 3 - Stretch Goals
 
