@@ -71,7 +71,7 @@ A closue is used on the second line.  The function body of return function() has
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
 
-
+'name' value is always the same, 'newRoll' value changes with each roll
 
 c. What is the lexical scope of `newRoll`? 
 
