@@ -28,14 +28,16 @@ console.log(processFirstItem(['foo', 'bar'],(str) => str + str));
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 includes the count varible within its function scope, in counter2 the count varible is declared outside of counter2's function scope.
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * counter 1 uses a closure. 
+ * counter 1 uses a closure with the function counterMaker closing the count variable within the scope of conterMaker
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
- * 
+ * counter1 would be prefereable if multiple counters were needed for the program and the count variable would need to be stored within that counters scope.  
+ * counter2 would be preferable if only one counter was needed and the count varible would only need to be accesed by the counter function.  
 */
 
 // counter1 code
@@ -48,7 +50,7 @@ function counterMaker() {
 }
 
 const counter1 = counterMaker();
-console.log(counter1());
+// console.log(counter1());
 
 
 // counter2 code
@@ -58,7 +60,7 @@ function counter2() {
   return count++;
 }
 
-console.log(counter2());
+// console.log(counter2());
 
 /* Task 2: inning() 
 
