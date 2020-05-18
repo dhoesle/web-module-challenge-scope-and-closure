@@ -129,15 +129,6 @@ function scoreboard(inning, inningNum) {
   let hScore = 0;
   let aScore = 0;
   for(let i = 1; i <= inningNum; i++){
-        if (i == 1){
-      i = i+'st';
-    }
-    else if (i === 2){
-      i = i+'nd';
-    }
-    else if (i === 3){
-      i = i+'rd';
-    }
     hScore = hScore + inning();
     aScore = aScore + inning();
     console.log(`${i} inning: ${hScore} - ${aScore}`);
