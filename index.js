@@ -129,10 +129,22 @@ function scoreboard(inning, inningNum) {
   let hScore = 0;
   let aScore = 0;
   for(let i = 1; i <= inningNum; i++){
+    if (i === 1){
+      console.log(`1st inning: ${hScore} - ${aScore}`);
+    }
+    else if (i === 2){
+      console.log(`2nd inning: ${hScore} - ${aScore}`);
+    }
+    else if (i === 3){
+      console.log(`3rd inning: ${hScore} - ${aScore}`);
+    }
+    else {
+      console.log(`${i}th inning: ${hScore} - ${aScore}`);
+    }
     hScore = hScore + inning();
     aScore = aScore + inning();
-    console.log(`${i} inning: ${hScore} - ${aScore}`);
   };
+  
   return `"Home": ${hScore}
 "Away": ${aScore}`;
 }
