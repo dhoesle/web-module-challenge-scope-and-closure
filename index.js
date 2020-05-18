@@ -17,7 +17,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-
+console.log(processFirstItem(['foo', 'bar'],(str) => str + str));
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -28,10 +28,14 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter 1 uses a closure. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * 
 */
 
 // counter1 code
@@ -40,9 +44,12 @@ function counterMaker() {
   return function counter() {
    return count++;
   }
+  
 }
 
 const counter1 = counterMaker();
+console.log(counter1());
+
 
 // counter2 code
 let count = 0;
@@ -51,6 +58,7 @@ function counter2() {
   return count++;
 }
 
+console.log(counter2());
 
 /* Task 2: inning() 
 
